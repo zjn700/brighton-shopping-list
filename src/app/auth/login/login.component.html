@@ -1,0 +1,32 @@
+<!--<p>-->
+<!--  <button (click)="login()">Login</button>-->
+<!--</p>-->
+<!--<img (click)="animateMe()" src="/assets/images/lock.png" id="lock">-->
+<!--<h3 (click)="animateMe()" id="lock">Login</h3>-->
+
+<!--<div [@listAnimation]='items.length' class="auth-form-container">-->
+
+<!--  <div id="list" *ngFor="let item of items">-->
+<!--      {{ item }}-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div [@zoomAnimation]='state' class="auth-form-container">-->
+<div [@formAnimation]="animateMe" class="auth-form-container login">
+
+  <!--<img src="/assets/images/unlock.svg" id="lock">-->
+<!--/shopping-list/src/assets/images/unlock.svg-->
+    <span class="error" *ngIf="error">{{ error }}</span>
+    
+  <!--<p [@loginAnimation]='state' (click)="animateMe()">I will animate</p>-->
+  
+
+  
+  <button (click)="loginFacebook()" id="fb">Login With Facebook</button><br>
+  <button (click)="loginGoogle()" id="google">Login With Google</button><br>
+  <button (click)="loginEmail()" id="email">Login With Email</button><br>
+  <!--<button routerLink="/login-email" id="email">Login with Email</button><br>-->
+
+  <a routerLink="/signup" routerLinkActive="active" class="alc auth-link">No account? <strong>Create one here</strong></a>
+</div>
+

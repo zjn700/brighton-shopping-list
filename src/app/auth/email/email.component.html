@@ -1,0 +1,59 @@
+<div [@formAnimation]='animateMe' class="auth-form-container">
+    <!--<a class="auth-link"  routerLink="/login" id="goback">Login form</a>-->
+    <h2 class="auth-title" >Email Login</h2>
+
+    <!--<span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>-->
+
+    <!--<form #formData='ngForm' (ngSubmit)="onSubmit(formData)">-->
+  <!--<form #formData (ngSubmit)="onSubmit(formData)">-->
+  <form (ngSubmit)='onSubmit(f, email, password)' #f="ngForm">
+
+      <input type="text" placeholder="Email address" (ngModel)="email" name="email" class="txt auth-input" required #email>
+      <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt auth-input" required #password> 
+      <h3 *ngIf="errorMessage" class="error-message">{{errorMessage}}</h3>
+
+      <!--<button type="submit" [disabled]="!formData.valid" class="basic-btn auth-btn">Log in</button>-->
+      <!--<button type="submit"  class="basic-btn auth-btn">Log in</button>-->
+      <button [disabled]="!f.valid"  type="submit"  [ngClass]="{'button-disabled' : !f.valid}" class="basic-btn auth-btn">Log in</button>
+
+      <br>
+      <h4>
+        <a class="auth-link"  routerLink="/login" id="goback">Back to the login form</a>
+        <a routerLink="/signup" class="alc auth-link auth-link-right">No account? <strong>Create one here.</strong></a>
+
+      </h4>
+  </form>
+  
+
+  <!--<form [formGroup]='signUpForm' (ngSubmit)="onSubmit()">-->
+      <!--<div class="form-group">-->
+      <!--    <label for="firstName">First Name  </label>-->
+      <!--    <input type="text" id="firstName" class="form-control" formControlName='firstName'>-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+      <!--    <label for="lastName">Last Name  </label>-->
+      <!--    <input type="text" id="lastName" class="form-control" formControlName='lastName'>-->
+      <!--</div>-->
+  <!--    <div class="form-group">-->
+  <!--        <label for="email">Email  </label>-->
+  <!--        <input type="text" id="email" class="form-control" formControlName='email'>-->
+  <!--        <div class='errorMessage' *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].dirty" >You must enter a valid email</div>-->
+  <!--        <div class='errorMessage' *ngIf="emailInUse" >{{emailInUseMessage}}</div>-->
+  <!--    </div>-->
+  <!--    <div class="form-group">-->
+  <!--        <label for="password">Password  </label>-->
+  <!--        <input type="password" id="password" class="form-control" formControlName='password'>-->
+  <!--        <div class='errorMessage' *ngIf="passwordMismatch" >{{passwordMismatchMessage}}</div>-->
+  <!--    </div>-->
+      <!--<div class="form-group">-->
+      <!--    <label for="passwordCheck">Re-enter your password  </label>-->
+      <!--    <input type="password" id="passwordCheck" class="form-control" formControlName='passwordCheck'>-->
+      <!--</div>        -->
+      <!--<div class="form-group">-->
+      <!--    <label for="office">Office  </label>-->
+      <!--    <input type="text" id="office" class="form-control" formControlName='office'>-->
+      <!--</div>-->
+  <!--    <button [disabled]="!myForm.valid" class="btn btn-primary" type='submit'>Submit</button>-->
+  <!--</form>-->
+  
+</div>
